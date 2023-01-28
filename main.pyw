@@ -6,6 +6,7 @@ FONT = "Terminal"
 DARK = "#0f0f0f"
 LIGHT_DARK = "#1a1a1a"
 
+
 # APP
 root = ttk.Tk()
 root.title("Disc-Libs")
@@ -54,7 +55,7 @@ frameBottom.config(
 
 
 ## SEARCH SPACE
-# LABEL TITLE
+# Label Title
 labelTitle = ttk.Label(
     frameSearch,
     text="Disc List",
@@ -66,18 +67,27 @@ labelTitle = ttk.Label(
 labelTitle.place(x=400, y=0)
 
 
-# Search
+# Entry Search
 entrySearch = ttk.Entry(
     frameSearch,
     fg="white",
     font=(FONT, 14),
     bg=DARK,
-    width=50,
-    takefocus=True
+    width=50
 )
 entrySearch.place(x=140, y=48)
 
-# Button
+
+# Button Search
+buttonSearch = ttk.Button(
+    frameSearch,
+    fg="white",
+    font=(FONT, 12),
+    bg=DARK,
+    width=10,
+    text="Search"
+)
+buttonSearch.place(x=650, y=46)
 
 
 # LOOP
