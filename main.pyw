@@ -2,43 +2,83 @@ import tkinter as ttk
 
 
 # CONSTANTS
+FONT = "Terminal"
 DARK = "#0f0f0f"
 LIGHT_DARK = "#1a1a1a"
 
 # APP
 root = ttk.Tk()
-
-
-# CONFIGS APP
 root.title("Disc-Libs")
 root.resizable(False, False)
 root.iconbitmap('discs.ico')
 root.geometry("900x600")
 root.config(
-            bg=DARK
-        )
+    bg=DARK
+)
+
+
+# FRAME SEARCH
+frameSearch = ttk.Frame(
+    root
+)
+frameSearch.place(x=20, y=20)
+frameSearch.config(
+    bg=LIGHT_DARK,
+    width=860,
+    height=80
+)
 
 
 # FRAME LIST
-frameList = ttk.Frame(root)
-frameList.pack(
-        side="left",
-        anchor="n", # (N=norte ; S=sur, E=este; O=oeste)
-        padx="20",
-        pady="20"
-    )
-
-
-# FRAME LIST CONFIGS
+frameList = ttk.Frame(
+    root
+)
+frameList.place(x=20, y=120)
 frameList.config(
-        bg=LIGHT_DARK,
-        width="860",
-        height="400",
-    )
+    bg=LIGHT_DARK,
+    width=860,
+    height=380,
+)
 
+
+# FRAME BOTTOM
+frameBottom = ttk.Frame(
+    root
+)
+frameBottom.place(x=20, y=520)
+frameBottom.config(
+    bg=LIGHT_DARK,
+    width=860,
+    height=60,
+)
+
+
+## SEARCH SPACE
 # LABEL TITLE
-labelTitle = ttk.Label(frameList, text="Disc List", fg="white", font=("Terminal", 18), bg=LIGHT_DARK)
+labelTitle = ttk.Label(
+    frameSearch,
+    text="Disc List",
+    fg="white",
+    font=(FONT, 18),
+    bg=LIGHT_DARK,
+    pady=8
+)
 labelTitle.place(x=400, y=0)
+
+
+# Search
+entrySearch = ttk.Entry(
+    frameSearch,
+    fg="white",
+    font=(FONT, 14),
+    bg=DARK,
+    width=50,
+    takefocus=True
+)
+entrySearch.place(x=140, y=48)
+
+# Button
+
 
 # LOOP
 root.mainloop()
